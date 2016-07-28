@@ -15,7 +15,7 @@ Types of Contributions
 Report Bugs
 ~~~~~~~~~~~
 
-Report bugs at https://github.com/FractalFlows/Emergence/issues.
+Report bugs at https://github.com/FractalFlows/Competipedia/issues.
 
 If you are reporting a bug, please include:
 
@@ -38,14 +38,14 @@ is open to whoever wants to implement it.
 Write Documentation
 ~~~~~~~~~~~~~~~~~~~
 
-Emergence could always use more documentation, whether as part of the
+Competipedia could always use more documentation, whether as part of the
 official Emergence docs, in docstrings, or even on the web in blog posts,
 articles, and such.
 
 Submit Feedback
 ~~~~~~~~~~~~~~~
 
-The best way to send feedback is to file an issue at https://github.com/FractalFlows/Emergence/issues.
+The best way to send feedback is to file an issue at https://github.com/FractalFlows/Competipedia/issues.
 
 If you are proposing a feature:
 
@@ -57,13 +57,10 @@ If you are proposing a feature:
 Get Started!
 ------------
 
-Ready to contribute? Here's how to set up `Emergence` for local development.
+Ready to contribute? Here's how to set up `Competipedia` for local development.
 
-1. Fork the `Emergence` repo on GitHub.
-2. Clone your fork locally::
-
-    $ git clone git@github.com:your_name_here/Emergence.git
-    $ cd Emergence/
+1. Fork the `Competipedia` repo on GitHub.
+2. Clone your fork locally
 
 3. Create a branch for local development::
 
