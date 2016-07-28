@@ -77,7 +77,7 @@ Template.Relationships.helpers({
   relationship: () => {
     console.log(this.doi);
     return [
-      Meteor.elements.question,
+      Meteor.elements.competitor,
       Meteor.elements.model,
     ]},
   item: function(_id){

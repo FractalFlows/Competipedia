@@ -57,7 +57,7 @@ Template.EmergenceVector.helpers({
 // Remap the elements object into an array for easier processing
 let element_array = Object.keys(Meteor.elements).sort().map(e=>Meteor.elements[e]);
 
-Template.VectorRelationships.helpers({
+Template.VectorCompetitors.helpers({
   relationship: () => element_array,
   item() {
     var self = this
@@ -75,7 +75,7 @@ Template.VectorRelationships.helpers({
   }
 });
 
-Template.VectorRelationships.helpers({
+Template.VectorCompetitors.helpers({
   github_stats: () => {return {
     n_commits:2,
     n_forks:4,

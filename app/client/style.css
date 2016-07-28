@@ -303,6 +303,12 @@ font-weight: 900;
   font-weight: bold;
   font-size: large
 }
+.emph4 {
+  font-weight: bold;
+	color: black;
+  font-size: x-large
+}
+
 /* Home Style of the tour page*/
 
 
@@ -1210,4 +1216,32 @@ h1 a {
   color: white;
 	font-size: 18px;
 	font-family: 'Lato', sans-serif;
+}
+
+
+
+.icon-background1 {
+    color: #00b300;
+}
+
+
+
+
+div.transbox {
+  background-color: lightgray;
+	font-family: 'Lato', sans-serif;
+	border: gray;
+	border-width:5px;
+	border-style: dashed;
+  opacity: 0.7;
+	border-radius: 25px;
+	height: 110%;
+	width: 50%;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 2%;
+	padding-top: 2%;
+	padding-right:1%;
+	padding-left:1%;
 }

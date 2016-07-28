@@ -6,20 +6,30 @@ findoi = function (opts) {
                       new RegExp('(?:' + doiRegex + ')', 'g')
 }
 
-Template.search_emergence_side_bar.events({
+Template.search_competitors.events({
   "submit .search": function(event, template){
     event.preventDefault();
     var text = event.target.search_text.value;
-    // Test if it's a doi using regex
-    if (findoi({exact:true}).test(text)) {
-      console.log('found it', text);
-      Router.go(`/emergence/doi/${text}`);
-    } else {
-      var keys = text.replace(/ /g, '+');
-      Router.go(`/emergence/search/${keys}`);
-    }
+    Router.go(`/emergence/doi/${text}`);
   }
 });
+
+
+// Template.search_competitors.events({
+//   "submit .search": function(event, template){
+//     event.preventDefault();
+//     var text = event.target.search_text.value;
+//     // Test if it's a doi using regex
+//     if (findoi({exact:true}).test(text)) {
+//       console.log('found it', text);
+//       Router.go(`/emergence/doi/${text}`);
+//     } else {
+//       var keys = text.replace(/ /g, '+');
+//       Router.go(`/emergence/search/${keys}`);
+//     }
+//   }
+// });
+
 
 Template.DOI_Integrations.helpers({
    git: [],

@@ -22,106 +22,6 @@ Template.DOI_Navbar.helpers({
     } else {return publi}},
 });
 
-var menu = [
-/*
-  {text: "Related", icon: "fa-link", items: [
-    {text: "URL/DOI", icon: "fa-link"},
-    {text: "Slideshow", icon: "fa-desktop"},
-    {text: "Video", icon: "fa-film"}]},
-*/
-/*
-  {text: "Discuss", icon: "fa-comments-o", items: [
-    {text: "Comment", icon: "fa-comments-o"},
-    {text: "Review", icon: "fa-gavel"},
-    {text: "Raise a Question", icon: "fa-question-circle"}]},
-*/
-/*
-  {text: "Extend", icon: "fa fa-arrows-v", items: [
-    {text: "Summarise", icon: "fa-compress"},
-    {text: "Popularize", icon: "fa-globe"},
-    {text: "Add a keyword", icon: "fa-list"}]},
-    // {text: "Review", icon: "fa-gavel"},
-  {text: "Add Relationship", items: [
-    Meteor.elements.question,
-    Meteor.elements.model,
-    Meteor.elements.hypothesis,
-    Meteor.elements.method,
-    Meteor.elements.code,
-    Meteor.elements.software,
-    Meteor.elements.experiment,
-    Meteor.elements.observation,
-    Meteor.elements.result,
-    Meteor.elements.dataset,
-    Meteor.elements.slideshow,
-    Meteor.elements.video,
-    Meteor.elements.reproduction,
-    Meteor.elements.version,
-    Meteor.elements.doi,
-    Meteor.elements.url,
-    // {text: "Hypothesis", icon: "fa-question-circle"},
-    // {text: "Method", icon: "fa-question-circle"},
-    // {text: "Code", icon: "fa-question-circle"},
-    // {text: "Software", icon: "fa-question-circle"},
-    // {text: "Experiment", icon: "fa-cogs",},
-    // {text: "Observation", icon: "fa-star-o",},
-    // {text: "Result", icon: "fa-star-o",},
-    // {text: "Dataset", icon: "fa-database",},
-    // {text: "Slideshow", icon: "fa-desktop"},
-    // {text: "Video", icon: "fa-film"},
-    // {text: "Reproduction", icon: "fa-clone",},
-    // {text: "Version", icon: "fa-code-fork",},
-    // {text: "DOI", icon: "fa-link"},
-    // {text: "URL", icon: "fa-link"},
-  ],},
-  {text: "Integrate", items: [
-    {text: "Workspaces", separator: false},
-    Meteor.elements.osf,
-    Meteor.elements.sharepoint,
-
-    {text: "Repositories", separator: true},
-    Meteor.elements.github,
-    Meteor.elements.gitlab,
-    Meteor.elements.bitbucket,
-
-    {text: "Files", separator: true},
-    Meteor.elements.dropbox,
-    Meteor.elements.box,
-    Meteor.elements.googledrive,
-    Meteor.elements.owncloud,
-
-    {text: "Open Access Publications", separator: true},
-    {text: "Zenodo", icon: "fa-file-text-o"},
-    {text: "Figshare", icon: "fa-file-image-o"},
-    {text: "Authorea", icon: "fa-file-text-o"},
-    {text: "Wikipedia", icon: "fa-wikipedia-w"},
-    {text: "Data Dryad", icon: "fa-database", href: "http://datadryad.org"},
-
-    {text: "Social Media", separator: true},
-    {text: "Facebook", icon: "fa-facebook-square"},
-    {text: "LinkedIn", icon: "fa-linkedin-square"},
-    {text: "ResearchGate", icon: "fa-building-o"},
-    {text: "Reddit", icon: "fa-reddit-square"},
-    {text: "Google", icon: "fa-google-plus"},
-    {text: "Twitter", icon: "fa-twitter-square"}]},
-  {text: "Request", items: [
-    {text: "To the Authors", separator: false},
-    {text: "Figure"},
-    {text: "Reproduction material"},
-    {text: "Data / Code"},
-    {text: "Full PDF"},
-    {text: "To the Readers", separator: true},
-    {text: "Review"},
-    {text: "Reproduction"}]},*/
-  {text: "Donate", icon: "fa-bitcoin",
-    href: "https://coinkite.com/pay/04815AF9C7-2C4BC4"},
-  /*{text: "Emerge",
-    href: "#"
-  },*/
-  {text: "My portfolio",
-    href: "#"
-  }
-];
-
 
 function find_in_menu(id) {
   var item = menu.map(function(e){
@@ -159,68 +59,25 @@ Template.Menubar.events({
 /* Side menu */
 
 var Sidemenu = [
-  {text: "Extend", items: [
-    {text: "Summarise", icon: "fa-compress", id:"summarise"},
-    {text: "Popularize", icon: "fa-globe", id:"popularize"},
-    {text: "Add a keyword", icon: "fa-list", id:"keyword"}]},
-    // {text: "Review", icon: "fa-gavel"},
-  {text: "Add Relationship", items: [
-    Meteor.elements.question,
-    Meteor.elements.model,
-    Meteor.elements.hypothesis,
-    Meteor.elements.method,
-    Meteor.elements.code,
-    Meteor.elements.software,
-    Meteor.elements.experiment,
-    Meteor.elements.observation,
-    Meteor.elements.result,
-    Meteor.elements.dataset,
-    Meteor.elements.slideshow,
-    Meteor.elements.video,
-    Meteor.elements.reproduction,
-    Meteor.elements.version,
-    Meteor.elements.doi,
-    Meteor.elements.url,
+  {text: "Add", items: [
+    Meteor.elements.competitor,
   ],},
-  {text: "Integrate", items: [
-    {text: "Workspaces", separator: false},
-    Meteor.elements.osf,
-    Meteor.elements.sharepoint,
-
-    {text: "Repositories", separator: true},
-    Meteor.elements.github,
-    Meteor.elements.gitlab,
-    Meteor.elements.bitbucket,
-
-    {text: "Files", separator: true},
-    Meteor.elements.dropbox,
-    Meteor.elements.box,
-    Meteor.elements.googledrive,
-    Meteor.elements.owncloud,
-
-    {text: "Open Access Publications", separator: true},
-    {text: "Zenodo", icon: "fa-file-text-o"},
-    {text: "Figshare", icon: "fa-file-image-o"},
-    {text: "Authorea", icon: "fa-file-text-o"},
-    {text: "Wikipedia", icon: "fa-wikipedia-w"},
-    {text: "Data Dryad", icon: "fa-database", href: "http://datadryad.org"},
-
-    {text: "Social Media", separator: true},
-    {text: "Facebook", icon: "fa-facebook-square"},
-    {text: "LinkedIn", icon: "fa-linkedin-square"},
-    {text: "ResearchGate", icon: "fa-building-o"},
-    {text: "Reddit", icon: "fa-reddit-square"},
-    {text: "Google", icon: "fa-google-plus"},
-    {text: "Twitter", icon: "fa-twitter-square"}]},
+  // {text: "Popularize", items: [
+  //   Meteor.elements.keyword,
+  // ],},
   {text: "Request", items: [
-    {text: "To the Authors", separator: false},
-    {text: "Figure"},
-    {text: "Reproduction material"},
-    {text: "Data / Code"},
-    {text: "Full PDF"},
-    {text: "To the Readers", separator: true},
-    {text: "Review"},
-    {text: "Reproduction"}]}
+//    {text: "To the Oracles", separator: false},
+//    {text: "New validation"},
+//    {text: "To the Users", separator: true},
+    Meteor.elements.requestnew,
+  ]},
+  {text: "Filter", items: [
+    {text: "by continent", icon: "fa-globe", id:"filter"},
+    {text: "by country", icon: "fa-globe", id:"filter"},
+    {text: "by city", icon: "fa-globe", id:"filter"},
+    {text: "by village", icon: "fa-globe", id:"filter"},
+    {text: "Geolocate me!", icon: "fa-globe", id:"filter"}
+  ],}
 ];
 
 

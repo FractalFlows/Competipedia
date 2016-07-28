@@ -93,17 +93,38 @@ Meteor.elements = {
     },
   },
 
-  question: {
-    id: "question",
-    text: "Scientific Question",
-    icon: "fa-question-circle",
+  competitor: {
+    id: "competitor",
+    text: "New Competitor",
+    icon: "fa-code-fork",
     modal: {
       template: "ModalStandard",
-      title: "Add relationship to scientific questions",
+      title: "Add new competitor",
       register: standard_register,
     },
   },
 
+  requestnew: {
+    id: "requestcompetitor",
+    text: "New Competitor",
+    icon: "fa-reply",
+    modal: {
+      template: "ModalRequestComp",
+      title: "Request new competitor",
+      register: standard_register,
+    },
+  },
+
+  keyword: {
+    id: "keyword",
+    text: "New keyword",
+    icon: "fa-code-fork",
+    modal: {
+      template: "ModalKeyword",
+      title: "Add new keyword",
+      register: standard_register,
+    },
+  },
 
   hypothesis: {
     id: "hypothesis",

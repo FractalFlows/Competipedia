@@ -15,13 +15,9 @@
 <template name="about">
   <meta name="viewport" content="width=device-width, user-scalable=yes">
   {{> Navbar}}
-  {{> Problemdef}}
-  {{> tf_features}}
-  {{> tf_tour_story_start_1}}
-  {{> Mailing}}
-  {{> Resources}}
-  {{> Footer}}
+  {{> NoCompanyInfo}}
 </template>
+
 
 <!-- This is the how it works page================================================== -->
 <template name="HowItWorks">
@@ -49,15 +45,16 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button> -->
-            <a class="navbar-brand" href="/"><strong><span class="color">Fractal Flows</span></strong></a>
+            <a class="navbar-brand" href="/"><strong><span class="color">Competipedia</span></strong></a>
           </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
           <!--  <li><a href="/emergence" class="page-scroll"><b>Emergence</b></a></li>-->
-          <!--  <li><a href="about" class="page-scroll"><b>Learn more about</b></a></li>-->
+          <li><a href="about" class="page-scroll"><b>Empty Search</b></a></li>
         <!--    <li><a href="HowItWorks" class="page-scroll"><b>Features</b></a></li> -->
         <!--    <li><a href="http://emergencefractalflows.tumblr.com/" class="page-scroll"><b>Our Blog</b></a></li> -->
+        {{> Menubar }}
           </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
@@ -89,65 +86,18 @@
   <div id="tf-home" class="text-center">
     <div class="overlay">
       <div class="content">
-        <h1 class="emph"><strong>Emergence from Fractal Flows</strong></h1>
         <!--
         <span class="emph2">Science and engineering unchained </span><span class="subtltType emph2"></span>
        -->
-      <span class="emph2">Science and engineering unchained on the <em>Blockchain!</em></span>
-        <!--
-        <span class="emph2">Science and engineering </span>
-        <div id="typed-strings">
-          <p><span class="emph2">unchained on the <em>Blockchain.</em> </span></p>
-        </div>
-        <span id="typed"></span>
-      -->
-        <br>
-        <span class="emph2">Track, share and discover </span>
-        <span style="color:#FCAC45" class="optionsType emph2"></span>
-           <!--Leverage the power of the Blockchain to
-           to make it easier for researchers, scientists, students and engineers
-           all the hidden work behind scientific publications.-->
-        <br><br>
-        <!--below is another solution but resulted in flicker everytime the page loads-->
-        <!--
-        <a class="btn btn-success btn-lg" role="button"
-           href="/emergence">
-          Launch <strong>Emergence</strong> &#8594;
-        </a>
-      -->
-
-        <!-- <div class="container">
-          <div class="embed-responsive embed-responsive-16by9">
-              <iframe class="embed-responsive-item" src="//www.youtube.com/embed/ePbKGoIGAXY"></iframe>
-          </div>
-        </div> -->
-
-        <!--<a class="btn btn-success btn-lg" href="/emergence" role="button">Get started with <strong>Emergence</strong> &#8594;</a> -->
-        <!-- <button href="" type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target=".bs-example-modal-lg">Watch the Tour</button>
-        <div class="modal fade bs-example-modal-lg">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-body">
-                      <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item allowfullscreen" width="871" height="480" src="https://www.youtube.com/embed/D3KH5cbAKUc?showinfo=0" frameborder="0" allowfullscreen></iframe>
-                      </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-
-
-        <a class="btn btn-success btn-lg" role="button"
-           href="about" >Learn more &#8594;
-        </a>
-
-        <br><br>
-
+       <br><br><br>
+       <br><br><br>
+        <span class="emph2">Discover market competitors </span>
+        <br><br><br>
         <div class="container-fluid" align="center">
           <form class="search">
             <div class="col-sm-3"></div>
             <div class="form-group col-sm-6"  style="float:center">
-              {{> search_emergence_side_bar}}
+              {{> search_competitors}}
             </div>
             <div class="col-sm-3"></div>
           </form>
@@ -233,6 +183,12 @@
 
 
 </template>
+
+
+
+
+
+
 
 <!-- About The product ====================================================== -->
 <template name="Problemdef">
@@ -784,7 +740,7 @@
               <form class="search">
                 <div class="col-sm-3"></div>
                 <div class="form-group col-sm-6"  style="float:center">
-                  {{> search_emergence_side_bar}}
+                  {{> search_competitors}}
                 </div>
                 <div class="col-sm-3"></div>
               </form>

@@ -19,9 +19,9 @@
 </template>
 
 <template name="VectorSideBar">
-  {{> search_emergence_side_bar }}
-  {{> Vector_EmergeButton_SideMenu }}
-  {{> VectoMetrics }}
+  {{> search_competitors }}
+  <!-- {{> Vector_EmergeButton_SideMenu }} -->
+  <!-- {{> VectoMetrics }} -->
   {{> Vector_Items_SideMenu }}
   {{!-- > VectorIntegrations --}}
 </template>
@@ -103,11 +103,14 @@
 
 
 <template name="VectorMain">
-  {{> VectorText }}
-  {{! > VectorSummary }}
-  {{> VectorRelationships }}
-  {{> VectorLeaks }}
-  {{> VectorJSON }}
+  <!-- {{> VectorText }} -->
+  {{> VectorCompetitors }}
+  <!-- {{> VectorSummary }} -->
+  {{> VectorGeoLocation }}
+  {{> VectorAnalytics }}
+  <!-- {{> VectorComment }} -->
+  <!-- {{> VectorLeaks }}
+  {{> VectorJSON }} -->
 </template>
 
 
@@ -115,7 +118,7 @@
 <template name="MainPanel">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <a class="accordion-toggle" href="#{{panel_id}}" data-toggle="collapse">{{title}}</a>
+      <a class="accordion-toggle" href="#{{panel_id}}" data-toggle="collapse"><b>{{title}}</b></a>
         <a class="pull-right glyphicon glyphicon-plus"
            href="#" data-toggle="tooltip" data-placement="top" title="Add"></a>
     </div>
@@ -151,30 +154,49 @@
     <!-- <input class="form-control" name="title" placeholder="Title" required> -->
     <textarea class="form-control" rows="5" name="textarea"
     placeholder="Enter your comment here"></textarea>
+    <br>
     <button class="btn btn-success">Post</button>
   </form>
 </template>
 
-<template name="VectorRelationships">
-  {{#MainPanel panel_id="related_questions" title="Related Dimensions"}}
+<template name="VectorCompetitors">
+    {{#MainPanel panel_id="related_questions" title="Related Competitors"}}
       {{#each relationship}}
         {{#if item.count}}
-          <h4><i class="fa {{ icon }}"></i> {{text}}</h4>
+          <!-- <h4><i class="fa {{ icon }}"></i> {{text}}</h4> -->
           {{#each item}}
             <div class="containter" data-toggle="tooltip" data-placement="left" title="{{comment}}">
+              <i class="fa fa-check-circle-o icon-background1"> &nbsp; </i>
               <a href="/emergence/{{#if slug}}{{type}}/{{slug}}{{else}}hash/{{_id}}{{/if}}">{{{process_nolinks title}}}</a>
-              {{! {process text} }}
-              {{#each find_relationships _id}}
+              <!-- {{#each find_rel
               <div class="container">
                 {{{process text}}}
               </div>
-              {{/each}}
+              {{/each}} -->
             </div>
           {{/each}}
         {{/if}}
       {{/each}}
   {{/MainPanel}}
 </template>
+
+
+<template name="VectorAnalytics">
+  {{#MainPanel id="related_ff" title="Analytics"}}
+    {{#each event }}
+      {{> UI.dynamic template=type}}
+    {{/each}}
+  {{/MainPanel}}
+</template>
+
+<template name="VectorGeoLocation">
+  {{#MainPanel id="related_ff" title="Geo Locations"}}
+    {{#each event }}
+      {{> UI.dynamic template=type}}
+    {{/each}}
+  {{/MainPanel}}
+</template>
+
 
 <template name="VectorSummary">
   {{#MainPanel id="summary" title="Summary"}}

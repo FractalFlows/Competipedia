@@ -16,9 +16,9 @@
 <template name="NavbarBase">
   <nav class="navbar navbar-default">
     <div class="container-fluid">
-      <div class="navbar-header">
+      <!-- <div class="navbar-header">
         {{> NavbarHeader }}
-      </div>
+      </div> -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         {{> Menubar }}
       </div>
@@ -63,11 +63,6 @@
 
 <template name="Menubar">
   <ul class="nav navbar-nav navbar-left">
-<!--    <li>
-        <a href="{{ url }}">
-            External
-        </a>
-    </li> -->
     {{#each item }}
       {{#if there_is "href" }}
         <li>
@@ -116,7 +111,7 @@
   </ul>
 <!-- Align right -->
   <ul class="nav navbar-nav navbar-right">
-    {{> loginButtons}} <!-- here -->
+    {{> loginButtons}}
 </ul>
 </template>
 
