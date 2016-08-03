@@ -20,7 +20,7 @@ Router.route('/', {
     template: 'home'
 });
 Router.route('/about');
-Router.route('/HowItWorks');
+Router.route('/Signup');
 
 // Emergence routes ------------------------------------------------------------
 // Router.route('/emergence/doi/:doi*', function() {
