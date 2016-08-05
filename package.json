@@ -1,13 +1,13 @@
 {
-  "name": "phaser",
+  "name": "competipedia",
   "version": "1.0.0",
-  "description": "Phaser: ",
+  "description": "Competipedia: find the competitors for a given company",
   "scripts": {
     "start": "npm run dev",
     "dev": "cd app && meteor --settings ../config/development/settings.json",
     "prod": "cd app && meteor --verbose --settings ../config/production/settings.json",
     "debug": "meteor debug --verbose --settings ../config/development/settings.json",
-    "mup-logs": "mup logs -n 3000",
-    "deploy-stag": "cd config/development && mupx deploy"
+    "deploy-staging": "cd app && DEPLOY_HOSTNAME=galaxy.meteor.com meteor deploy staging.competipedia.io --settings ../config/development/settings.json",
+    "deploy-prod": "cd app && DEPLOY_HOSTNAME=galaxy.meteor.com meteor deploy competipedia.io --settings ../config/development/settings.json"
   }
 }
