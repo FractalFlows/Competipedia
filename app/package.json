@@ -1,0 +1,8 @@
+{
+  "name": "competipedia",
+  "version": "1.0.0",
+  "main": "index.js",
+  "description": "Competipedia: find the competitors for a given company",
+  "dependencies": {
+  }
+}
