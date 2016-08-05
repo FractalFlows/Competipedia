@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Competipedia: find the competitors for a given company",
   "scripts": {
+    "init": "cd cd app && meteor npm install",
     "start": "npm run dev",
     "dev": "cd app && meteor --settings ../config/development/settings.json",
     "prod": "cd app && meteor --verbose --settings ../config/production/settings.json",
