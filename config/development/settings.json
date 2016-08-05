@@ -1,0 +1,22 @@
+{
+  "galaxy.meteor.com": {
+    "env": {
+      "MONGO_URL": "mongodb://..",
+      "ROOT_URL": "https://staging.competipedia.io"
+    }
+  },
+  "public": {
+    "version": "1.0.0",
+    "env": "development",
+  },
+  "kadira": {
+    "appId": "appId",
+    "appSecret": "appSecret"
+  },
+  "smtp": {
+    "username": "competipedia",
+    "password": "password",
+    "server": "smtp.sendgrid.net",
+    "port": "587"
+  },
+}

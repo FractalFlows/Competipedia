@@ -1,0 +1,13 @@
+{
+  "name": "phaser",
+  "version": "1.0.0",
+  "description": "Phaser: ",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "cd app && meteor --settings ../config/development/settings.json",
+    "prod": "cd app && meteor --verbose --settings ../config/production/settings.json",
+    "debug": "meteor debug --verbose --settings ../config/development/settings.json",
+    "mup-logs": "mup logs -n 3000",
+    "deploy-stag": "cd config/development && mupx deploy"
+  }
+}
