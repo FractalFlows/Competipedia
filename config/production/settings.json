@@ -7,7 +7,7 @@
   },
   "public": {
     "version": "1.0.0",
-    "env": "production",
+    "env": "production"
   },
   "kadira": {
     "appId": "appId",
@@ -18,5 +18,5 @@
     "password": "password",
     "server": "smtp.sendgrid.net",
     "port": "587"
-  },
+  }
 }
