@@ -1,0 +1,68 @@
+<template name="newCompanyModal">
+  <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="{{ id }}Label">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <form class="process" id="">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel" >
+              Add new company
+            </h4>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+            <label for="Short">Company</label>
+            <input type="text"
+              class="form-control"
+              id="Short"
+              name="title"
+              placeholder="Write full {{id}} name">
+            </div>
+            <div class="form-group">
+            <label for="Short">URL</label>
+            <input type="text"
+              class="form-control"
+              id="Short"
+              name="compURL"
+              placeholder="Write {{id}} website URL">
+            </div>
+            <div class="form-group">
+              <label for="Short">Location</label>
+              <input type="text"
+                class="form-control"
+                id="Short"
+                name="countryName"
+                placeholder="Enter {{id}} location: continent, country, region, city, etc.">
+            </div>
+            <div class="form-group">
+              <label for="ModalDetails">Details</label>
+              <textarea class="form-control"
+                name="details"
+                id="ModalDetails"
+                rows="5"
+                placeholder="Describe in more details this {{id}}">
+              </textarea>
+            </div>
+            <div class="form-group">
+              <label for="ModalComment">Category</label>
+              <textarea class="form-control"
+                name="category"
+                id="ModalComment"
+                rows="1"
+                placeholder="Enter keywords to popularize this competitor list">
+              </textarea>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">
+              Close
+            </button>
+            <button type="submit" class="btn btn-primary">
+              Register
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</template>

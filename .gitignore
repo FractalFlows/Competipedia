@@ -5,8 +5,7 @@ __pycache__/
 # C extensions
 *.so
 
-.github
-.smtp
+/app/node_modules
 .DS_Store
 .idea
 

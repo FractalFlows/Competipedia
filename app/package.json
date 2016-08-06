@@ -1,0 +1,12 @@
+{
+  "name": "competipedia",
+  "private": true,
+  "dependencies": {
+    "imports": "^1.0.0",
+    "jquery": "2.2.4",
+    "meteor-node-stubs": "~0.2.0"
+  },
+  "devDependencies": {
+    "babel-root-slash-import": "^1.1.0"
+  }
+}
