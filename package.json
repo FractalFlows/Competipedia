@@ -6,9 +6,9 @@
     "init": "cd cd app && meteor npm install",
     "start": "npm run dev",
     "dev": "cd app && meteor --settings ../config/development/settings.json",
-    "prod": "cd app && meteor --verbose --settings ../config/production/settings.json",
+    "prod": "source ./config/production/env.sh && cd app && meteor --verbose --production --settings ../config/production/settings.json",
     "debug": "meteor debug --verbose --settings ../config/development/settings.json",
-    "deploy-staging": "cd app && DEPLOY_HOSTNAME=galaxy.meteor.com meteor deploy staging.competipedia.io --settings ../config/development/settings.json",
-    "deploy-prod": "cd app && DEPLOY_HOSTNAME=galaxy.meteor.com meteor deploy competipedia.io --settings ../config/development/settings.json"
+    "deploy-staging": "cd app && DEPLOY_HOSTNAME=eu-west-1.galaxy-deploy.meteor.com meteor deploy competipedia.io --settings ../config/development/settings.json",
+    "deploy-prod": "cd app && DEPLOY_HOSTNAME=eu-west-1.galaxy-deploy.meteor.com meteor deploy competipedia.io --settings ../config/production/settings.json"
   }
 }
