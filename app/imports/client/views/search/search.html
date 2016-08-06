@@ -1,0 +1,35 @@
+<template name="search">
+  <div class="overlay">
+    <div class="content">
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-3">
+            {{> sideBar}}
+          </div>
+          <div class="col-md-9">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <a class="accordion-toggle" href="#" data-toggle="collapse">
+                  <b>Competitors</b>
+                </a>
+              </div>
+              <div class="panel-body">
+                {{#each companies}}
+                  <div
+                    class="containter"
+                    data-toggle="tooltip"
+                    data-placement="left"
+                    title="{{comment}}"
+                  >
+                    <i class="fa fa-check-circle-o icon-background1"></i>
+                    <a href="{{url}}">{{name}}</a>
+                  </div>
+                {{/each}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
