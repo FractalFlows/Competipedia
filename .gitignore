@@ -8,7 +8,7 @@ __pycache__/
 /app/node_modules
 .DS_Store
 .idea
-
+config/
 
 # Distribution / packaging
 .Python
