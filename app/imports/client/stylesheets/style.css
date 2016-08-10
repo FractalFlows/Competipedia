@@ -177,12 +177,17 @@ text-transform: uppercase;
 color: #fff;
 font-weight: 900;
 }
-#tf-menu.navbar-default .navbar-nav > li > a {
+#tf-menu.navbar-default .navbar-nav > li > a, #tf-menu.navbar-default .navbar-nav > li > a .open {
+	background-color: transparent;
 	text-transform: uppercase;
 	color: white;
 	/*font-size: 14px;*/
 	letter-spacing: 1px;
 	transition-duration: 0.25s;
+}
+
+.dropdown-toggle {
+	cursor: pointer;
 }
 
 .on {
@@ -334,7 +339,6 @@ font-weight: 900;
 
 .content{
 	position: relative;
-	padding: 8% 0 0;
 	overflow: auto;
 }
 
@@ -342,6 +346,27 @@ font-weight: 900;
 	color: #fcac45;
 }
 
+a:hover, a:focus {
+	color: #fb9613;
+}
+
+.btn-primary {
+	background-color: #fcac45;
+	border-color: #fcac45;
+}
+
+.btn-primary:hover {
+	background-color: #fb9613;
+	border-color: #fb9613;
+}
+
+.btn:active.btn-primary,
+.btn-primarybtn-primary:active,
+.btn-primary:visited,
+.btn-primary:focus {
+	background-color: #f18904;
+	border-color: #f18904;
+}
 
 a.fa.fa-angle-down {
 	padding: 10px 15px;
@@ -901,21 +926,21 @@ button.btn.tf-btn.btn-default {
 
 
 /* Footer */
-nav#footer{
+nav.footer{
 	background: #222222;
 	color: #ffffff;
 	padding: 5px 0 0px 0;
 }
-nav#footer .fnav{ vertical-align: middle;}
+nav.footer .fnav{ vertical-align: middle;}
 ul.footer-social li{
 	display: inline-block;
 	margin-right: 10px;
 }
-nav#footer p{
+nav.footer p{
 	/*font-size: 12px;*/
 	margin-top: 5px;
 }
-#footer i.fa {
+.footer i.fa {
 	height: 20px;
 	width: 30px;
 	border: 2px solid #8c8c8c;
@@ -925,7 +950,7 @@ nav#footer p{
 	color: #8c8c8c;
 	transition: all 0.5s;
 }
-#footer i.fa:hover{
+.footer i.fa:hover{
 	background: #FCAC45;
 	border-color: #FCAC45;
 	color: #ffffff;
