@@ -1,38 +1,21 @@
 <template name="sideBar">
-  <form class="search">
-      <input type="text" class="form-control input-lg" name="search_text"
-      placeholder="Enter company name" required>
-  </form>
+  <div class="search">
+      <input type="text" class="form-control input-lg company-input"
+      placeholder="Enter company name" value="{{company}}" required>
+  </div>
   <br>
   <ul class="list-group">
-    {{#each item}}
+    <li class="list-group-item">
+      <button type="button" class="btn btn-primary btn-block js-new-competitor">
+        Add new competitor
+      </button>
+    </li>
+    {{#if showBecomeValidator}}
       <li class="list-group-item">
-        <a  class="link"
-            role="button"
-            data-toggle="collapse"
-            href="#collapse{{slugify text}}"
-            aria-expanded="false"
-            aria-controls="collapse{{slugify text}}">
-
-          <i class="fa {{ icon }}"></i>
-          {{text}}
-          <i class="fa fa-chevron-down"></i>
-        </a>
-        <div class="collapse">
-          <ul>
-            {{#each items}}
-              <li role="separator" class="divider"></li>
-              <li style="color:gray">{{ text }}</li>
-              <li>
-                <a class="sidebar_link" href="#">
-                  <i class="fa {{ icon }}"></i>
-                  {{ text }}
-                </a>
-              </li>
-            {{/each}}
-          </ul>
-        </div>
+        <button type="button" class="btn btn-primary btn-block js-become-competitor">
+          Become validator
+        </button>
       </li>
-    {{/each}}
+    {{/if}}
   </ul>
 </template>
