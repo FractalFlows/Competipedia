@@ -1,1 +1,3 @@
-import './smtp.js'
+import './accountsConfiguration'
+import './emailConfiguration'
+import './smtp'
