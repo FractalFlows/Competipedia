@@ -6,12 +6,12 @@ FlowRouter.route('/', {
   action: () => BlazeLayout.render('mainLayout', { content: 'home'}),
 })
 
-FlowRouter.route('/about', {
-  name: 'about',
-  action: () => BlazeLayout.render('mainLayout', { content: 'about'}),
-})
-
-FlowRouter.route('/search/:company', {
+FlowRouter.route('/search/:company?', {
   name: 'search',
   action: () => BlazeLayout.render('mainLayout', { content: 'search'}),
 })
+
+
+FlowRouter.notFound = {
+  action: () => BlazeLayout.render('mainLayout', { content: 'home'}),
+}
