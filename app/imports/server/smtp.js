@@ -1,6 +1,5 @@
 import { Meteor } from 'meteor/meteor'
 
-const {username, password, server, port} = Meteor.settings
+const {username, password, server, port} = Meteor.settings.smtp
 
-process.env.MAIL_URL = `smtp://${username}:${password}@${server}:587`
-
+process.env.MAIL_URL = `smtp://${username}:${password}@${server}:${port}`
