@@ -1,24 +1,48 @@
 <template name="navBar">
-  <nav id="tf-menu" class="navbar navbar-default navbar-fixed-top">
+  <nav id="{{id}}" class="navbar navbar-default {{isFixed}}">
     <div class="container">
-      <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <button
+          type="button"
+          class="navbar-toggle collapsed"
+          data-toggle="collapse"
+          data-target="#bs-example-navbar-collapse-1"
+          aria-expanded="false"
+        >
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
-        </button>
+       </button>
         <a class="navbar-brand" href="/"><strong><span class="color">Competipedia</span></strong></a>
       </div>
-      <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="about" class="page-scroll"><b>Empty Search</b></a></li>
-          <li><a href="Signup" class="page-scroll"><b>Sign up</b></a></li>
-          {{> menuBar }}
+          {{#if currentUser}}
+            <li id="login-dropdown-list" class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown">
+                  {{currentUser.emails.[0].address}}
+                  <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a href="#">
+                      <button class="btn btn-block btn-default js-change-password">
+                        Change Password
+                      </button>
+                      <button class="btn btn-block btn-default js-logout">
+                        Logout
+                      </button>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+          {{else}}
+            <li><a href="#" class="js-sign-in">SIGN IN</a></li>
+            <li><a href="#" class="js-sign-up">SIGN UP</a></li>
+          {{/if}}
         </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
+      </div>
+    </div>
   </nav>
 </template>
