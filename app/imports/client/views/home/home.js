@@ -1,9 +1,19 @@
 import { Template } from 'meteor/templating'
+import { FlowRouter } from 'meteor/kadira:flow-router'
 import $ from 'jquery'
 
 /**
  * Home Events
  */
+
+Template.home.events({
+  'submit .search'(event, template) {
+    event.preventDefault()
+    const company = template.$('.company-name').val()
+
+    FlowRouter.go('search', {company})
+  }
+})
 
 /**
  * Home Hooks
@@ -11,7 +21,7 @@ import $ from 'jquery'
 
 Template.home.onRendered(function() {
   $(".subtltType").typed({
-    strings: ["on the <em>Blockchain!</em>"],
+    strings: ["Have you ever thought in the possibility to find new competitors?"],
     startDelay: 50,              // time before typing starts
     typeSpeed: 50, // typing speed
     backDelay: 500, // pause before backspacing
@@ -21,33 +31,5 @@ Template.home.onRendered(function() {
     showCursor: true,
     cursorChar: "|",
     callback: function(){ } // call function after typing is done
-  });
-
-  $(".actionsType").typed({
-    strings: ["<em>Track </em>","<em>Share </em>",
-    "<em>Discover </em>","<em>Review </em>"],
-    startDelay: 1000,              // time before typing starts
-    typeSpeed: 50, // typing speed
-    backDelay: 5000, // pause before backspacing
-    loop: true, // loop on or off (true or false)
-    loopCount: false, // number of loops, false = infinite
-    contentType: 'html', // or 'text'
-    showCursor: true,
-    cursorChar: "|",
-    callback: function(){ } // call function after typing is done
-  });
-
-  $("#typed").typed({
-    stringsElement: $('#typed-strings'),
-    startDelay: 50,              // time before typing starts
-    typeSpeed: 50, // typing speed
-    backDelay: 750, // pause before backspacing
-    loop: true, // loop on or off (true or false)
-    loopCount: false, // number of loops, false = infinite
-    contentType: 'html', // or 'text'
-    showCursor: true,
-    cursorChar: "|",
-    callback: function(){ } // call function after typing is done
-  });
-
-});
+  })
+})

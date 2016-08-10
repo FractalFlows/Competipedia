@@ -1,10 +1,12 @@
 <template name="home">
+  {{> navBar id="tf-menu" isFixed=true}}
   <div id="tf-home" class="text-center">
     <div class="overlay">
       <div class="content">
         <br><br><br>
         <br><br><br>
-        <span class="emph2">Discover market competitors</span>
+        <h2 class="emph2">Discover market competitors</h2>
+        <h4 class="subtltType"></h4>
         <br><br><br>
         <div class="container-fluid" align="center">
           <form class="search">
@@ -13,7 +15,7 @@
               <form class="search">
                 <input
                   type="text"
-                  class="form-control input-lg"
+                  class="form-control input-lg company-name"
                   name="search_text"
                   placeholder="Enter company name"
                   required
