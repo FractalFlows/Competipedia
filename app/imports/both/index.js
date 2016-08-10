@@ -1,3 +1,4 @@
 import './routes'
-import './easySearchIndex'
 import './methods'
+import './collections'
+import './accountsConfig'
