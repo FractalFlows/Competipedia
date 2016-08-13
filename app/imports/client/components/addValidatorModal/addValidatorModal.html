@@ -15,31 +15,33 @@
           </h4>
         </div>
         <div class="modal-body">
-          {{#autoForm
-            schema=schema
-            id="addValidatorForm"
-            type="method"
-            doc=currentUser
-            meteormethod="addValidatorUser"
-          }}
-            <!-- hidden fields -->
-            {{> afQuickField type="hidden" name="_id"}}
-            {{> afQuickField type="hidden" name="profile.validator" value=true}}
-            <!-- end hidden fields -->
+          {{#if currentUser.profile.firstName}}
+            <p>Your request was already send.</p>
+            <p>Please wait for the admin answer.</p>
+          {{else}}
+            {{#autoForm
+              schema=schema
+              id="addValidatorForm"
+              type="method"
+              meteormethod="addValidatorUser"
+            }}
+              <!-- hidden fields -->
+              {{> afQuickField type="hidden" name="profile.validator" value=true}}
+              <!-- end hidden fields -->
 
-            {{> afQuickField name="profile.firstName"}}
-            {{> afQuickField name="profile.lastName"}}
-       <!--      {{> afQuickField name="email"}} -->
-            {{> afQuickField name="profile.phone"}}
-            {{> afQuickField name="profile.facebook"}}
-            {{> afQuickField name="profile.website"}}
+              {{> afQuickField name="profile.firstName"}}
+              {{> afQuickField name="profile.lastName"}}
+              {{> afQuickField name="profile.phone"}}
+              {{> afQuickField name="profile.facebook"}}
+              {{> afQuickField name="profile.website"}}
 
-            {{> afQuickField name="profile.description" rows=10}}
+              {{> afQuickField name="profile.description" rows=10}}
 
-            <button type="submit" class="btn btn-default btn-block">
-              Become Validator
-            </button>
-          {{/autoForm}}
+              <button type="submit" class="btn btn-default btn-block">
+                Become Validator
+              </button>
+            {{/autoForm}}
+          {{/if}}
         </div>
       </div>
     </div>
