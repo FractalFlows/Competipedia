@@ -1,6 +1,8 @@
 import { Template } from 'meteor/templating'
 import { FlowRouter } from 'meteor/kadira:flow-router'
 import { Modal } from '/imports/both/modalApi'
+import { Roles } from 'meteor/alanning:roles'
+import { Meteor } from 'meteor/meteor'
 
 import _ from 'lodash'
 
@@ -30,7 +32,7 @@ Template.sideBar.events({
 Template.sideBar.helpers({
   company: () => FlowRouter.getParam('company'),
   showBecomeValidator: () =>
-    Meteor.user() && !_.get(Meteor.user(), 'profile.validator'),
+    Meteor.user() && !Roles.userIsInRole(Meteor.userId(), 'validator'),
 })
 
 Template.sideBar.onCreated(function() {
