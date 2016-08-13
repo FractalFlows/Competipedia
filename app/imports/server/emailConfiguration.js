@@ -8,7 +8,7 @@ Accounts.emailTemplates.verifyEmail.subject =(user) =>
   'Welcome to Competipedia! Please verify your email'
 
 Accounts.emailTemplates.verifyEmail.html =  (user, url) =>
-  `Hello ${user.profile.firstName} ${user.profile.lastName}
+  `Hello dear user,
 
   Please verify your email by simply clicking the link below:
 
