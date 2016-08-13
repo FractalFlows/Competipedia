@@ -1,0 +1,21 @@
+<template name="sideBar">
+  <div class="search">
+      <input type="text" class="form-control input-lg company-input"
+      placeholder="Enter company name" value="{{company}}" required>
+  </div>
+  <br>
+  <ul class="list-group">
+    <li class="list-group-item">
+      <button type="button" class="btn btn-primary btn-block js-new-competitor">
+        Add new competitor
+      </button>
+    </li>
+    {{#if showBecomeValidator}}
+      <li class="list-group-item">
+        <button type="button" class="btn btn-primary btn-block js-become-competitor">
+          Become validator
+        </button>
+      </li>
+    {{/if}}
+  </ul>
+</template>
