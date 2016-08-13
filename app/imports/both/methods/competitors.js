@@ -1,12 +1,8 @@
 import { Meteor } from 'meteor/meteor'
 
 Meteor.methods({
-  'competitors.get'(company) {
-    check({company}, {
-      company: String,
-    })
-
-    const company = Companies.findOne({name: company})
+  'competitors.get'(name) {
+    const company = Companies.findOne({name})
 
     if (!company) return []
 
