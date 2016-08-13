@@ -1,0 +1,17 @@
+<template name="validatorsLayout">
+  {{> navBar}}
+  {{#if currentUser}}
+    {{#if loggingIn}}
+      <h1 class="text-center title-validator">Loading...</h1>
+    {{else}}
+      {{#if isInRole 'admin'}}
+        {{> Template.dynamic template=content data=params}}
+      {{else}}
+        <h1 class="text-center title-validator">You don't have rights for this action</h1>
+      {{/if}}
+    {{/if}}
+  {{else}}
+    <h1 class="text-center title-validator">Please login to do this action</h1>
+  {{/if}}
+  {{> footer}}
+</template>
