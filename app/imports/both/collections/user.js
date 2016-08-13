@@ -28,37 +28,33 @@ Meteor.users.schema = new SimpleSchema({
     type: Boolean,
     optional: true
   },
-  createdAt: {
-    type: Date
-  },
   profile: {
     type: Object
   },
   'profile.firstName': {
     label:'First name',
     type: String,
+    optional: true,
     custom() {
-      if (this.userId) return 'required'
-      return null
+      if (this.userId && !this.value) return 'required'
     }
   },
 
   'profile.lastName': {
     label:'Last name',
     type: String,
+    optional: true,
     custom() {
-      console.log(this);
-      if (this.userId) return 'required'
-      return null
+      if (this.userId && !this.value) return 'required'
     }
   },
 
   'profile.phone': {
     label:'Phone number',
     type: String,
+    optional: true,
     custom() {
-      if (this.userId) return 'required'
-      return null
+      if (this.userId && !this.value) return 'required'
     }
   },
 
@@ -77,6 +73,12 @@ Meteor.users.schema = new SimpleSchema({
   'profile.website': {
     label:'Website',
     type: String,
+    optional: true
+  },
+
+  'profile.validator': {
+    label:'validator',
+    type: Boolean,
     optional: true
   },
 
