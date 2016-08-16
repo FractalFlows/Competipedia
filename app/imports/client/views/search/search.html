@@ -5,7 +5,10 @@
       <div class="panel-body">
         <div class="row">
           <div class="col-md-3">
-            {{> sideBar}}
+            {{> sideBar
+              loading=loading
+              listCompetitors=listCompetitors
+            }}
           </div>
           <div class="col-md-9">
             <div class="panel panel-default">
@@ -25,6 +28,8 @@
                     <i class="fa fa-check-circle-o icon-background1"></i>
                     <a href="{{url}}">{{name}}</a>
                   </div>
+                {{else}}
+                  {{> emptySearch}}
                 {{/each}}
               </div>
             </div>
