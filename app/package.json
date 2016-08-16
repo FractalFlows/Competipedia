@@ -2,6 +2,7 @@
   "name": "competipedia",
   "private": true,
   "dependencies": {
+    "denodeify": "^1.2.1",
     "imports": "^1.0.0",
     "jquery": "^2.2.4",
     "lodash": "^4.14.2",
