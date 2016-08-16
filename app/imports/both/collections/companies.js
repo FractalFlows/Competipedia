@@ -10,12 +10,9 @@ Companies.deny({
 })
 
 Companies.schema = new SimpleSchema({
-  _id: {
-    type: String,
-    regEx: SimpleSchema.RegEx.Id,
-  },
   createdAt: {
     type: Date,
+    optional: true,
     autoValue() {
       if (this.isInsert) {
         return new Date();
@@ -28,22 +25,24 @@ Companies.schema = new SimpleSchema({
   },
   updatedAt: {
     type: Date,
+    optional: true,
     autoValue() {
       if (this.isUpdate) {
         return new Date()
       }
     },
     denyInsert: true,
-    optional: true,
   },
   name: {
     label: 'Company name',
+    index: true,
     type: String,
     max: 150,
   },
   url: {
     label: 'Url',
     type: String,
+    regEx: SimpleSchema.RegEx.Url,
     max: 150,
   },
   location: {
@@ -55,10 +54,12 @@ Companies.schema = new SimpleSchema({
       lat: {
         label: 'Latitude',
         type: Number,
+        optional: true,
       },
       lng: {
         label: 'longitude',
         type: Number,
+        optional: true,
       },
     }),
   },
@@ -70,7 +71,13 @@ Companies.schema = new SimpleSchema({
   },
   categories: {
     label: 'Categories',
+    index: true,
     type: [String],
+  },
+  isValid: {
+    label: 'Is valid?',
+    index: true,
+    type: Boolean,
   },
 })
 
