@@ -5,9 +5,10 @@ import { Roles } from 'meteor/alanning:roles'
 import { Meteor } from 'meteor/meteor'
 
 import _ from 'lodash'
+import denodeify from 'denodeify'
 
 Template.sideBar.events({
-  'keyup .company-input'(event, template) {
+  'keyup .js-company-input'(event, template) {
     const company = event.currentTarget.value
 
     FlowRouter.setParams({company})
@@ -22,7 +23,9 @@ Template.sideBar.events({
       return
     }
 
-    Modal.open('addNewCompanyModal')
+    Modal.open('newCompanyModal', {
+      name: FlowRouter.getParam('company'),
+    })
   },
   'click .js-become-competitor'() {
     Modal.open('addValidatorModal')
@@ -31,16 +34,16 @@ Template.sideBar.events({
 
 Template.sideBar.helpers({
   company: () => FlowRouter.getParam('company'),
-  showBecomeValidator: () =>
-    Meteor.user() && !Roles.userIsInRole(Meteor.userId(), 'validator'),
 })
 
 Template.sideBar.onCreated(function() {
   const debouncedSearch = _.debounce(() => {
-    const company = FlowRouter.getParam('company')
     this.data.loading.set(true)
 
-    Meteor.callPromise('competitors.get', company)
+    const company = FlowRouter.getParam('company')
+    const getCompetitors = denodeify(Meteor.call)
+
+    getCompetitors('competitors.get', company)
     .then(list => this.data.listCompetitors.set(list))
     .catch(error => window.alert(error))
     .done(() => this.data.loading.set(false))

@@ -1,6 +1,6 @@
 <template name="sideBar">
   <div class="search">
-      <input type="text" class="form-control input-lg company-input"
+      <input type="text" class="form-control input-lg js-company-input"
       placeholder="Enter company name" value="{{company}}" required>
   </div>
   <br>
@@ -10,12 +10,12 @@
         Add new competitor
       </button>
     </li>
-    {{#if showBecomeValidator}}
+    {{#unless isInRole 'admin,validator'}}
       <li class="list-group-item">
         <button type="button" class="btn btn-primary btn-block js-become-competitor">
           Become validator
         </button>
       </li>
-    {{/if}}
+    {{/unless}}
   </ul>
 </template>
