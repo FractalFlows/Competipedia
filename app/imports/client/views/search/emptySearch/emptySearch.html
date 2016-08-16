@@ -1,21 +1,10 @@
 <template name="emptySearch">
-  <div id="tf-home" class="text-center">
-    <div class="overlay">
-      <div class="content">
-       <br><br><br>
-        <div class="transbox">
-          <span class="emph4">Sorry, we have no information about this company!
-            <br>
-             Please click below to add company information and send a request
-             to find direct competitors.
-          </span>
-          <br><br>
-          <button id="open-noinfomodal" type="button" class="btn btn-success btn-lg">
-            Add new competitor
-          </button>
-        </div>
-      </div>
-    </div>
+  <div>
+    <span class="emph4">Sorry, we have no information about this company!
+      Please click below to add company information and send a request to find direct competitors.
+    </span>
+    <button type="button" class="btn btn-primary js-request-company">
+      Request new Company
+    </button>
   </div>
-  {{> newCompanyModal}}
 </template>
