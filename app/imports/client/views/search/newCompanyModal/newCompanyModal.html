@@ -1,67 +1,55 @@
 <template name="newCompanyModal">
-  <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="{{ id }}Label">
-    <div class="modal-dialog" role="document">
+  <div class="modal fade newCompanyModal">
+    <div class="modal-dialog">
       <div class="modal-content">
-        <form class="process" id="">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel" >
-              Add new company
-            </h4>
-          </div>
+        <div class="modal-header">
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title text-center">
+            Add new company
+          </h4>
+        </div>
           <div class="modal-body">
-            <div class="form-group">
-            <label for="Short">Company</label>
-            <input type="text"
-              class="form-control"
-              id="Short"
-              name="title"
-              placeholder="Write full {{id}} name">
-            </div>
-            <div class="form-group">
-            <label for="Short">URL</label>
-            <input type="text"
-              class="form-control"
-              id="Short"
-              name="compURL"
-              placeholder="Write {{id}} website URL">
-            </div>
-            <div class="form-group">
-              <label for="Short">Location</label>
-              <input type="text"
-                class="form-control"
-                id="Short"
-                name="countryName"
-                placeholder="Enter {{id}} location: continent, country, region, city, etc.">
-            </div>
-            <div class="form-group">
-              <label for="ModalDetails">Details</label>
-              <textarea class="form-control"
+            {{#autoForm
+              schema=schema
+              id="newCompanyModal"
+              type="method"
+              meteormethod="addCompany"
+            }}
+
+              {{> afQuickField name="name" placeholder="Write company full name"}}
+              {{> afQuickField name="url" placeholder="Write company website URL"}}
+              {{> afQuickField name="location.address" placeholder="Write company location"}}
+
+              {{> afQuickField type="hidden" name="location.lat"}}
+              {{> afQuickField type="hidden" name="location.lng"}}
+              {{> afQuickField type="hidden" name="isValid" value=(isInRole 'admin,validator')}}
+
+              {{> afQuickField
                 name="details"
-                id="ModalDetails"
-                rows="5"
-                placeholder="Describe in more details this {{id}}">
-              </textarea>
-            </div>
-            <div class="form-group">
-              <label for="ModalComment">Category</label>
-              <textarea class="form-control"
-                name="category"
-                id="ModalComment"
-                rows="1"
-                placeholder="Enter keywords to popularize this competitor list">
-              </textarea>
-            </div>
+                placeholder="Describe in more details"
+                rows=10
+              }}
+
+              {{> afQuickField name="categories" placeholder="Enter categories to popularize this competitor list"}}
+
+              <button type="submit" class="btn btn-default btn-block">
+                Add company
+              </button>
+            {{/autoForm}}
+            {{#unless isInRole 'admin,validator'}}
+              <p>This new company will be validated before getting into the list.</p>
+              <p>
+                If you want to help Competipedia get better
+                <a href="#" class="js-become-validator">become a validator</a>.
+              </p>
+            {{/unless}}
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">
-              Close
-            </button>
-            <button type="submit" class="btn btn-primary">
-              Register
-            </button>
-          </div>
-        </form>
       </div>
     </div>
   </div>

@@ -1,2 +1,2 @@
-import './newCompanyModal'
 import './newCompanyModal.html'
+import './newCompanyModal'
