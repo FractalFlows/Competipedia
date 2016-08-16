@@ -41,3 +41,5 @@ aldeed:simple-schema
 aldeed:autoform
 aldeed:collection2
 alanning:roles
+jeremy:selectize
+comerc:autoform-selectize
