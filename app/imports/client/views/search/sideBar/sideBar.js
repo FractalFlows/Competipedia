@@ -13,7 +13,7 @@ Template.sideBar.events({
 
     FlowRouter.setParams({company})
   },
-  'click .js-new-competitor'() {
+  'click .js-new-company'() {
     if (!Meteor.userId()) {
       Modal.open('accountsModal', {
         subTemplate: 'signIn',
@@ -27,7 +27,7 @@ Template.sideBar.events({
       name: FlowRouter.getParam('company'),
     })
   },
-  'click .js-become-competitor'() {
+  'click .js-become-validator'() {
     Modal.open('addValidatorModal')
   },
 })
@@ -38,10 +38,11 @@ Template.sideBar.helpers({
 
 Template.sideBar.onCreated(function() {
   const debouncedSearch = _.debounce(() => {
-    this.data.loading.set(true)
-
     const company = FlowRouter.getParam('company')
     const getCompetitors = denodeify(Meteor.call)
+
+    this.data.loading.set(true)
+    this.data.searchEmpty.set(_.isEmpty(company))
 
     getCompetitors('competitors.get', company)
     .then(list => this.data.listCompetitors.set(list))

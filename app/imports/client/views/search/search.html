@@ -7,6 +7,7 @@
           <div class="col-md-3">
             {{> sideBar
               loading=loading
+              searchEmpty=searchEmpty
               listCompetitors=listCompetitors
             }}
           </div>
@@ -18,19 +19,22 @@
                 </a>
               </div>
               <div class="panel-body">
-                {{#each companies}}
-                  <div
-                    class="containter"
-                    data-toggle="tooltip"
-                    data-placement="left"
-                    title="{{comment}}"
-                  >
-                    <i class="fa fa-check-circle-o icon-background1"></i>
-                    <a href="{{url}}">{{name}}</a>
-                  </div>
+                {{#if loadingGet}}
+                  <p>Loading...</p>
                 {{else}}
-                  {{> emptySearch}}
-                {{/each}}
+                  {{#if searchEmptyGet}}
+                    <p>Search a company to find it competitors</p>
+                  {{else}}
+                    {{#each listCompetitorsGet}}
+                      <div>
+                        <i class="fa fa-check-circle-o {{isValid}}"></i>
+                        <a href="{{url}}" target="_blank">{{name}}</a>
+                      </div>
+                    {{else}}
+                      {{> emptySearch}}
+                    {{/each}}
+                  {{/if}}
+                {{/if}}
               </div>
             </div>
           </div>
