@@ -1,4 +1,3 @@
-import './accountsConfiguration'
-import './emailConfiguration'
-import './smtp'
-import './methods/sendEmail'
+import './config'
+import './methods'
+import './publications'

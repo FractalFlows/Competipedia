@@ -5,6 +5,9 @@ import fs from 'fs'
 
 Meteor.methods({
   'sendEmail'({to, from, subject, view, data}) {
+    this.unblock()
+
+    console.log("Email sent!");
 
     const base = process.env.PWD
     const path = `${base}/imports/server/views/${view}.hbs`
@@ -12,7 +15,6 @@ Meteor.methods({
     const template = handlebars.compile(source)
     const html = template(data)
 
-    this.unblock()
     Email.send({
       to,
       from,
