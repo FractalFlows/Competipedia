@@ -26,9 +26,8 @@
               {{> afQuickField name="url" placeholder="Write company website URL"}}
               {{> afQuickField name="location.address" placeholder="Write company location"}}
 
-              {{> afQuickField type="hidden" name="location.lat"}}
-              {{> afQuickField type="hidden" name="location.lng"}}
-              {{> afQuickField type="hidden" name="isValid" value=(isInRole 'admin,validator')}}
+              {{> afQuickField type="hidden" name="location.lat" data-geo="lat"}}
+              {{> afQuickField type="hidden" name="location.lng" data-geo="lng"}}
 
               {{> afQuickField
                 name="details"
