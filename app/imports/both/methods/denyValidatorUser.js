@@ -4,7 +4,6 @@
 
 import { Meteor } from 'meteor/meteor'
 import { Roles } from 'meteor/alanning:roles'
-import _ from 'lodash'
 import buildValidatorEmail from './buildValidatorEmail'
 
 Meteor.methods({
@@ -15,7 +14,7 @@ Meteor.methods({
     }
 
     const emailOptions = buildValidatorEmail(validatorUserId, {
-      view: 'denyValidator',
+      view: 'generic',
       from: 'Competipedia <support@competipedia.io>',
       subject: `Competipedia validator request denied`
     })

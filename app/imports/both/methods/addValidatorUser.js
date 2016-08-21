@@ -20,6 +20,7 @@ Meteor.methods({
       view: 'newValidator',
       from: 'Competipedia <support@competipedia.io>',
       subject: 'User request to be validator',
+      to: Meteor.users.find({roles: 'admin'}).map(user => user.emails[0].address),
     })
 
     emailOptions.data.confirmUrl = Meteor.absoluteUrl(`confirm-validator/${this.userId}`)

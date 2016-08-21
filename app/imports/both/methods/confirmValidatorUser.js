@@ -4,7 +4,6 @@
 
 import { Meteor } from 'meteor/meteor'
 import { Roles } from 'meteor/alanning:roles'
-import _ from 'lodash'
 import buildValidatorEmail from './buildValidatorEmail'
 
 Meteor.methods({
@@ -17,7 +16,7 @@ Meteor.methods({
     Roles.addUsersToRoles(validatorUserId, 'validator')
 
     const emailOptions = buildValidatorEmail(validatorUserId, {
-      view: 'confirmValidator',
+      view: 'generic',
       from: 'Competipedia <support@competipedia.io>',
       subject: 'Congratulations! You just become a validator for Competipedia',
     })
@@ -25,6 +24,7 @@ Meteor.methods({
     emailOptions.data.title = 'Thank you for being a validator'
     emailOptions.data.content = `You got approved by our team.
       Now you can help us validate competitors companies.
+      Expect receive some emails of users adding new companies.
       Thank you,
     `
 
