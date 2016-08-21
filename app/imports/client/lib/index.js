@@ -1,1 +1,2 @@
 import './blazeLayoutConfig'
+import './reCaptcha'
