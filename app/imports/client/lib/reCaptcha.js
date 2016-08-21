@@ -1,6 +1,8 @@
 import { reCAPTCHA } from 'meteor/altapp:recaptcha'
 
+const { reCAPTCHAPublicKey } = Meteor.settings.public
+
 reCAPTCHA.config({
-  publickey: '6Lc8GSgTAAAAAPP9Biqwl5Y3B5KKlUbDyViIzSzR',
+  publickey: reCAPTCHAPublicKey,
   hl: 'en_us',
 })
