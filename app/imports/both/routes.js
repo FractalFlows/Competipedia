@@ -15,12 +15,22 @@ FlowRouter.route('/search/:company?', {
 
 FlowRouter.route('/confirm-validator/:validatorUserId?', {
   name: 'confirmValidatorUser',
-  action: () => BlazeLayout.render('validatorsLayout', { content: 'confirmValidatorUser'}),
+  action: () => BlazeLayout.render('actionLayout', { content: 'confirmValidatorUser'}),
 })
 
 FlowRouter.route('/deny-validator/:validatorUserId?', {
   name: 'denyValidatorUser',
-  action: () => BlazeLayout.render('validatorsLayout', { content: 'denyValidatorUser'}),
+  action: () => BlazeLayout.render('actionLayout', { content: 'denyValidatorUser'}),
+})
+
+FlowRouter.route('/confirm-company/:companyId?/:userId?', {
+  name: 'confirmNewCompany',
+  action: () => BlazeLayout.render('actionLayout', { content: 'confirmNewCompany'}),
+})
+
+FlowRouter.route('/deny-company/:companyId?/:userId?', {
+  name: 'denyNewCompany',
+  action: () => BlazeLayout.render('actionLayout', { content: 'denyNewCompany'}),
 })
 
 FlowRouter.notFound = {
