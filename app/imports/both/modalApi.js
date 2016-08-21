@@ -36,9 +36,9 @@ export const Modal = {
 
   close() {
     if (this.views.length) {
-      const lastView = this.views[this.views.length - 1];
-      const templateName = lastView.templateName;
-      const subTemplate = lastView.subTemplate;
+      const lastView = this.views[this.views.length - 1]
+      const templateName = lastView.templateName
+      const subTemplate = lastView.subTemplate
 
       const modalSelector = subTemplate ?
         `.modal.${templateName}.${subTemplate}` :
