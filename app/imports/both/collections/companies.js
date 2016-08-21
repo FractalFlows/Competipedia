@@ -1,5 +1,7 @@
 import { Mongo } from 'meteor/mongo'
 import { SimpleSchema } from 'meteor/aldeed:simple-schema'
+import Categories from './categories'
+import { Roles } from 'meteor/alanning:roles'
 
 const Companies = new Mongo.Collection('companies')
 
@@ -15,7 +17,7 @@ Companies.schema = new SimpleSchema({
     optional: true,
     autoValue() {
       if (this.isInsert) {
-        return new Date();
+        return new Date()
       } else if (this.isUpsert) {
         return {$setOnInsert: new Date()}
       } else {
@@ -73,14 +75,40 @@ Companies.schema = new SimpleSchema({
     label: 'Categories',
     index: true,
     type: [String],
+    autoform: {
+      type: 'select2',
+      options: () => setOptionsCategories(Categories.find().fetch()),
+      afFieldInput: {
+        multiple: true,
+        select2Options: {
+          placeholder: 'Add categories',
+        }
+      }
+    },
   },
   isValid: {
     label: 'Is valid?',
     index: true,
     type: Boolean,
+    optional: true,
+    autoValue() {
+      if (Roles.userIsInRole(this.userId, ['validator', 'admin'])) return true
+      return false
+    }
   },
 })
 
-Companies.attachSchema(Companies.schema)
+/**
+ * Helpers
+ */
 
+function setOptionsCategories (categories) {
+  return categories.map(({name}) => ({ label:name , value:name }))
+}
+
+/**
+ * Exports
+ */
+
+Companies.attachSchema(Companies.schema)
 export default Companies
