@@ -55,12 +55,12 @@ Companies.schema = new SimpleSchema({
       },
       lat: {
         label: 'Latitude',
-        type: Number,
+        type: String,
         optional: true,
       },
       lng: {
         label: 'longitude',
-        type: Number,
+        type: String,
         optional: true,
       },
     }),
