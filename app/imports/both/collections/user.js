@@ -70,6 +70,12 @@ Meteor.users.schema = new SimpleSchema({
     optional: true
   },
 
+  'profile.linkedin': {
+    label:'Link linkedin',
+    type: String,
+    optional: true
+  },
+
   'profile.website': {
     label:'Website',
     type: String,
