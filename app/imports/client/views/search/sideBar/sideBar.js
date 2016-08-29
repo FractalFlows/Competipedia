@@ -27,6 +27,12 @@ Template.sideBar.events({
       name: FlowRouter.getParam('company'),
     })
   },
+  'click .js-request-competitor'() {
+
+    Modal.open('requestCompetitorModal', {
+      name: FlowRouter.getParam('company'),
+    })
+  },
   'click .js-become-validator'() {
     Modal.open('addValidatorModal')
   },
