@@ -14,22 +14,3 @@ Template.home.events({
     FlowRouter.go('search', {company})
   }
 })
-
-/**
- * Home Hooks
- */
-
-Template.home.onRendered(function() {
-  $(".subtltType").typed({
-    strings: ["Have you ever thought in the possibility to find new competitors?"],
-    startDelay: 50,              // time before typing starts
-    typeSpeed: 50, // typing speed
-    backDelay: 500, // pause before backspacing
-    loop: true, // loop on or off (true or false)
-    loopCount: false, // number of loops, false = infinite
-    contentType: 'html', // or 'text'
-    showCursor: true,
-    cursorChar: "|",
-    callback: function(){ } // call function after typing is done
-  })
-})
