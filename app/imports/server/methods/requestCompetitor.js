@@ -4,7 +4,7 @@
 
 import { Meteor } from 'meteor/meteor'
 import { Roles } from 'meteor/alanning:roles'
-import { reCAPTCHA } from 'meteor/altapp:recaptcha'
+import { reCAPTCHA } from 'meteor/competipedia:recaptcha'
 
 import  requestCompetitorSchema from '/imports/both/schemas/requestCompetitor'
 
@@ -12,9 +12,9 @@ Meteor.methods({
   requestCompetitor(doc) {
     requestCompetitorSchema.validate(doc)
 
-    reCAPTCHA.verifyCaptcha(this.connection.clientAddress, doc.captchaData)
+    const captcha = reCAPTCHA.verifyCaptcha(this.connection.clientAddress, doc.captchaData)
 
-    if (!reCAPTCHA.success) {
+    if (!captcha.success) {
       throw new Meteor.Error(403, `Reacaptcha error`)
     }
 
