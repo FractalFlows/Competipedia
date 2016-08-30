@@ -1,4 +1,4 @@
-import { reCAPTCHA } from 'meteor/altapp:recaptcha'
+import { reCAPTCHA } from 'meteor/astrocoders:recaptcha'
 import { meteor } from 'meteor/meteor'
 
 const { reCAPTCHAPrivateKey } = Meteor.settings

@@ -4,7 +4,7 @@
 
 import { Meteor } from 'meteor/meteor'
 import { Roles } from 'meteor/alanning:roles'
-import { reCAPTCHA } from 'meteor/competipedia:recaptcha'
+import { reCAPTCHA } from 'meteor/astrocoders:recaptcha'
 
 import  requestCompetitorSchema from '/imports/both/schemas/requestCompetitor'
 
