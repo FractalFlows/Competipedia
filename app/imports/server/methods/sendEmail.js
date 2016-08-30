@@ -7,11 +7,8 @@ Meteor.methods({
   'sendEmail'({to, from, subject, view, data}) {
     this.unblock()
 
-    console.log("Email sent!");
-
-    const base = process.env.PWD
-    const path = `${base}/imports/server/views/${view}.hbs`
-    const source = fs.readFileSync(path,'utf8')
+    const path = Assets.absoluteFilePath(`emailViews/${view}.hbs`)
+    const source = fs.readFileSync(path, 'utf8')
     const template = handlebars.compile(source)
     const html = template(data)
 
@@ -20,6 +17,6 @@ Meteor.methods({
       from,
       subject,
       html,
-    })
+    }, () => console.log('Email sent!'))
   }
 })
