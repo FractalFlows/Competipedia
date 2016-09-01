@@ -1,7 +1,1 @@
-import './addValidatorUser'
-import './confirmValidatorUser'
-import './denyValidatorUser'
-import './confirmNewCompany'
-import './denyNewCompany'
 import './competitors'
-import './addCompany'

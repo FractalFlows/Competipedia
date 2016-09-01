@@ -22,6 +22,10 @@ Meteor.methods({
       throw new Meteor.Error(403, `You don't have access for this action`)
     }
 
+    if (!user.emails[0].verified) {
+      throw new Meteor.Error(403, 'Please verify your email to continue this action')
+    }
+
     const { emails } = Meteor.users.findOne(this.userId)
 
     const emailOptions = {
