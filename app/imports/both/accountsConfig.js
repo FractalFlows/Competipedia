@@ -2,6 +2,7 @@ import { AccountsTemplates } from 'meteor/useraccounts:core'
 import { Meteor } from 'meteor/meteor'
 import { Modal } from '/imports/both/modalApi'
 import _ from 'lodash'
+import toastr from 'toastr'
 
 AccountsTemplates.configure({
   // Behavior
@@ -18,7 +19,7 @@ AccountsTemplates.configure({
   showPlaceholders: true,
   showResendVerificationEmailLink: false,
 
-  //Template
+  // Template
   defaultLayout: 'accountsLayout',
   defaultLayoutRegions: {},
   defaultContentRegion: 'content',
@@ -26,8 +27,11 @@ AccountsTemplates.configure({
   onSubmitHook: (error, state) => {
     if (error) return
 
-    if (state === 'signUp' && _.get(Meteor.user(), 'profile.validator')) {
+    if (state === 'signUp') {
+      toastr.warning('Please access the email we just sent you and click in the link to verify your account')
+    }
 
+    if (state === 'signUp' && _.get(Meteor.user(), 'profile.validator')) {
       Modal.close({
         templateName: 'accountsModal',
         subTemplate: 'signUp',
