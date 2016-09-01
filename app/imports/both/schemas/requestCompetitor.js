@@ -2,11 +2,11 @@ import { SimpleSchema } from 'meteor/aldeed:simple-schema'
 
 export default new SimpleSchema({
   name: {
-    label: 'Company name',
+    label: 'Request competitors to',
     type: String,
   },
   description: {
-    label: 'Describe what this company does so we can find it competitors',
+    label: 'Details',
     type: String,
   },
   captchaData: {
