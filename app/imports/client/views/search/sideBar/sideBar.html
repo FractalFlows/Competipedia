@@ -6,21 +6,23 @@
   <br>
   <ul class="list-group">
     <li class="list-group-item">
-      <button type="button" class="btn btn-primary btn-block js-new-company">
-        Add new company
+      <button type="button" class="btn btn-primary btn-block js-new-competitor">
+        Add new competitor
       </button>
     </li>
     <li class="list-group-item">
       <button type="button" class="btn btn-primary btn-block js-request-competitor">
-        Request new Competitor
+        Request new competitor
       </button>
     </li>
-    {{#unless isInRole 'admin,validator'}}
-      <li class="list-group-item">
-        <button type="button" class="btn btn-primary btn-block js-become-validator">
-          Become validator
-        </button>
-      </li>
-    {{/unless}}
+    {{#if currentUser}}
+      {{#unless isInRole 'admin,validator'}}
+        <li class="list-group-item">
+          <button type="button" class="btn btn-primary btn-block js-become-validator">
+            Become validator
+          </button>
+        </li>
+      {{/unless}}
+    {{/if}}
   </ul>
 </template>
