@@ -22,11 +22,20 @@ AutoForm.hooks({
       if (error && error.reason === 'Reacaptcha error') {
         toastr.error('Oh noes, you seems a robot!')
       }
+
+      if (error && error.reason) {
+        toastr.error(error.reason)
+      }
+
       grecaptcha.reset()
     },
     onSuccess() {
       grecaptcha.reset()
-      toastr.success('You just requested a new competitor successfuly!')
+      if (Roles.userIsInRole(this.userId, ['validator', 'admin'])) {
+        toastr.success('You requested a new competitor successfully')
+      } else {
+        toastr.success('Thank you for your request, we will get back to you shortly')
+      }
       Modal.close()
     }
   }
