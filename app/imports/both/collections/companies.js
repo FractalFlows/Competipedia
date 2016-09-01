@@ -36,7 +36,7 @@ Companies.schema = new SimpleSchema({
     denyInsert: true,
   },
   name: {
-    label: 'Company name',
+    label: 'Name',
     index: true,
     type: String,
     max: 150,
@@ -103,7 +103,7 @@ Companies.schema = new SimpleSchema({
  */
 
 function setOptionsCategories (categories) {
-  return categories.map(({name}) => ({ label:name , value:name }))
+  return categories.map(({name}) => ({ label: name, value: name }))
 }
 
 /**
