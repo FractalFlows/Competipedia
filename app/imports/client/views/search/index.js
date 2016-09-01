@@ -1,5 +1,5 @@
 import './emptySearch'
-import './newCompanyModal'
+import './newCompetitorModal'
 import './requestCompetitorModal'
 import './sideBar'
 import './search.html'

@@ -1,5 +1,5 @@
-<template name="newCompanyModal">
-  <div class="modal fade newCompanyModal">
+<template name="newCompetitorModal">
+  <div class="modal fade newCompetitorModal">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -11,41 +11,44 @@
             <span aria-hidden="true">&times;</span>
           </button>
           <h4 class="modal-title text-center">
-            Add new company
+            Add new competitor
           </h4>
         </div>
           <div class="modal-body">
             {{#autoForm
               schema=schema
-              id="newCompanyModal"
-              type="method"
-              meteormethod="addCompany"
+              id="newCompetitorModal"
             }}
 
-              {{> afQuickField name="name" placeholder="Write company full name"}}
-              {{> afQuickField name="url" placeholder="Write company website URL"}}
-              {{> afQuickField name="location.address" placeholder="Write company location"}}
+              {{> afQuickField name="name" placeholder="Example"}}
+              {{> afQuickField name="url" placeholder="http://example.com"}}
+              {{> afQuickField name="location.address" placeholder="Main Street..."}}
 
               {{> afQuickField type="hidden" name="location.lat" data-geo="lat"}}
               {{> afQuickField type="hidden" name="location.lng" data-geo="lng"}}
 
               {{> afQuickField
                 name="details"
-                placeholder="Describe in more details"
+                placeholder="Example works mainly with..."
                 rows=10
               }}
 
               {{> afQuickField name="categories" placeholder="Enter categories to popularize this competitor list"}}
 
+              {{> reCAPTCHA}}
+
+              <br>
+
               <button type="submit" class="btn btn-default btn-block">
-                Add company
+                Add competitor
               </button>
             {{/autoForm}}
             {{#unless isInRole 'admin,validator'}}
-              <p>This new company will be validated before getting into the list.</p>
+              <br>
+              <p>This new competitor will be validated before getting into the list.</p>
               <p>
                 If you want to help Competipedia get better
-                <a href="#" class="js-become-validator">become a validator</a>.
+                <a href="#" class="js-become-validator">Become a validator</a>.
               </p>
             {{/unless}}
           </div>
