@@ -355,6 +355,10 @@ a:hover, a:focus {
 	color: #fb9613;
 }
 
+.btn {
+	white-space: normal;
+}
+
 .btn-primary {
 	background-color: #fcac45;
 	border-color: #fcac45;
@@ -942,7 +946,6 @@ ul.footer-social li{
 	margin-right: 10px;
 }
 nav.footer p{
-	/*font-size: 12px;*/
 	margin-top: 5px;
 }
 .footer i.fa {
@@ -959,6 +962,11 @@ nav.footer p{
 	background: #FCAC45;
 	border-color: #FCAC45;
 	color: #ffffff;
+}
+@media screen and (max-width: 400px) {
+	nav.footer p{
+		font-size: 10px;
+	}
 }
 
 
