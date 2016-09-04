@@ -219,6 +219,10 @@ font-weight: 900;
 	background-color: #FFF;
 	}
 
+	.navbar-fixed-top, .navbar-fixed-bottom {
+		z-index: 1;
+	}
+
 
 /* Emergence Search Style*/
 #tf-Emergence-Search{
