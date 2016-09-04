@@ -10,6 +10,7 @@ aldeed:schema-index@1.0.1
 aldeed:simple-schema@1.5.3
 aldeed:template-extension@3.4.3
 allow-deny@1.0.5
+astrocoders:recaptcha@2.0.2
 autoupdate@1.2.11
 babel-compiler@6.9.0
 babel-runtime@0.1.10
@@ -24,7 +25,6 @@ caching-html-compiler@1.0.6
 callback-hook@1.0.9
 check@1.2.3
 coffeescript@1.0.17
-competipedia:recaptcha@2.0.1
 ddp@1.2.5
 ddp-client@1.2.9
 ddp-common@1.2.6
