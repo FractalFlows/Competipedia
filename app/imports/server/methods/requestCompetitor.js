@@ -6,27 +6,28 @@ import { Meteor } from 'meteor/meteor'
 import { Roles } from 'meteor/alanning:roles'
 import { reCAPTCHA } from 'meteor/astrocoders:recaptcha'
 
-import  requestCompetitorSchema from '/imports/both/schemas/requestCompetitor'
+import requestCompetitorSchema from '/imports/both/schemas/requestCompetitor'
 
 Meteor.methods({
   requestCompetitor(doc) {
     requestCompetitorSchema.validate(doc)
 
+    if (!this.userId) {
+      throw new Meteor.Error(403, `You don't have access for this action`)
+    }
+
     const captcha = reCAPTCHA.verifyCaptcha(this.connection.clientAddress, doc.captchaData)
+    const { emails } = Meteor.users.findOne(this.userId)
 
     if (!captcha.success) {
       throw new Meteor.Error(403, `Reacaptcha error`)
     }
 
-    if (!this.userId) {
-      throw new Meteor.Error(403, `You don't have access for this action`)
-    }
-
-    if (!user.emails[0].verified) {
+    if (!emails[0].verified) {
       throw new Meteor.Error(403, 'Please verify your email to continue this action')
     }
 
-    const { emails } = Meteor.users.findOne(this.userId)
+
 
     const emailOptions = {
       view: 'requestCompetitor',
