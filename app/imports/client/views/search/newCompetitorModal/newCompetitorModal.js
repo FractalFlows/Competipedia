@@ -5,6 +5,7 @@ import { AutoForm } from 'meteor/aldeed:autoform'
 import { Modal } from '/imports/both/modalApi'
 import { Roles } from 'meteor/alanning:roles'
 import toastr from 'toastr'
+import _ from 'lodash'
 
 Template.newCompetitorModal.events({
   'click .js-become-validator' () {
@@ -31,8 +32,11 @@ AutoForm.hooks({
   newCompetitorModal: {
     onSubmit(doc) {
       this.event.preventDefault()
-      const { requestCompetitors = false } = Template.instance().parent().data
+      const { requestCompetitors = false } =
+        _.get(Template.instance().parent(), 'data', {})
       const captchaData = grecaptcha.getResponse()
+
+
 
       Meteor.call('addCompetitor', { requestCompetitors, captchaData, doc },
       (error, result) => {
