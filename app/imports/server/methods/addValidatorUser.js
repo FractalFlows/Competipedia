@@ -14,10 +14,6 @@ Meteor.methods({
       throw new Meteor.Error(403, `You don't have access for this action`)
     }
 
-    if (!Meteor.user().emails[0].verified) {
-      throw new Meteor.Error(403, 'Please verify your email to continue this action')
-    }
-
     Meteor.users.update(this.userId, {$set: doc})
 
     const emailOptions = buildValidatorEmail(this.userId, {
