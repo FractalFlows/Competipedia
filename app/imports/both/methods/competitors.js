@@ -3,7 +3,10 @@ import Companies from '/imports/both/collections/companies'
 
 Meteor.methods({
   'competitors.get'(name) {
-    const company = Companies.findOne({name: { $regex: RegExp(name, 'i')}})
+    const company = Companies.findOne({
+      name: {$regex: RegExp(name, 'i')},
+      isValid: true
+    })
 
     if (!company) return []
 
