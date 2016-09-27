@@ -33,6 +33,7 @@ Template.navBar.events({
     event.preventDefault()
 
     Meteor.logout()
+    FlowRouter.go('/')
   },
 })
 
