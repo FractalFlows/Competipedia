@@ -9,6 +9,11 @@
     "prod": "source ./config/production/env.sh && cd app && meteor --verbose --production --settings ../config/production/settings.json",
     "debug": "meteor debug --verbose --settings ../config/development/settings.json",
     "deploy-staging": "cd app && DEPLOY_HOSTNAME=eu-west-1.galaxy-deploy.meteor.com meteor deploy competipedia.io --settings ../config/development/settings.json",
-    "deploy-prod": "cd app && DEPLOY_HOSTNAME=eu-west-1.galaxy-deploy.meteor.com meteor deploy competipedia.io --settings ../config/production/settings.json"
+    "deploy-prod": "cd app && DEPLOY_HOSTNAME=eu-west-1.galaxy-deploy.meteor.com meteor deploy competipedia.io --settings ../config/production/settings.json",
+    "test:integration": "chimp --ddp http://localhost:3000/ --path=tests --mocha",
+    "test:integration:watch": "npm run test:integration -- --watch"
+  },
+  "dependencies": {
+    "chimp": "^0.41.1"
   }
 }
