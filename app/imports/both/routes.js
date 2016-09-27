@@ -1,7 +1,5 @@
 import { FlowRouter } from 'meteor/kadira:flow-router'
 import { BlazeLayout } from 'meteor/kadira:blaze-layout'
-import { Roles } from 'meteor/alanning:roles'
-import { Meteor } from 'meteor/meteor'
 
 FlowRouter.route('/', {
   name: 'home',
@@ -31,6 +29,11 @@ FlowRouter.route('/confirm-company/:companyId?/:userId?', {
 FlowRouter.route('/deny-company/:companyId?/:userId?', {
   name: 'denyNewCompany',
   action: () => BlazeLayout.render('actionLayout', { content: 'denyNewCompany'}),
+})
+
+FlowRouter.route('/dashboard', {
+  name: 'dashboard',
+  action: () => BlazeLayout.render('actionLayout', { content: 'dashboard'}),
 })
 
 FlowRouter.notFound = {
