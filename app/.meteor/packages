@@ -46,3 +46,7 @@ alanning:roles
 jeremy:selectize
 astrocoders:recaptcha@2.0.2
 lukemadera:autoform-googleplace
+
+# testing
+xolvio:cleaner
+xolvio:backdoor
