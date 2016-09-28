@@ -14,7 +14,7 @@ Meteor.methods({
         name: 'Astrocoders',
         url: 'http://astrocoders.com',
         location: {
-          address: 'Красная Площадь, Moscow'
+          address: 'Красная Площадь, Moscow',
           lat: '55.7539816',
           lng: '37.6208647',
         },
@@ -38,7 +38,7 @@ Meteor.methods({
           lat: '55.7824475',
           lng: '37.599259',
         },
-      },
+      }
     ].forEach(company => {
       Companies.insert(company)
     })
