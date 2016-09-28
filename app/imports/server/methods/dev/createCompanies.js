@@ -1,14 +1,14 @@
 import { Meteor } from 'meteor/meteor'
-import { Companies } from '/imports/both/collections/companies'
+import Companies from '/imports/both/collections/companies'
 
 Meteor.methods({
   'dev/createCompanies'(){
     const base = {
       isValid: true,
       categories: ['blade', 'blade design'],
-    }
+    };
 
-    [
+    ([
       {
         ...base,
         name: 'Astrocoders',
@@ -39,7 +39,7 @@ Meteor.methods({
           lng: '37.599259',
         },
       }
-    ].forEach(company => {
+    ]).forEach(company => {
       Companies.insert(company)
     })
 
