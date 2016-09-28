@@ -5,7 +5,7 @@ Meteor.methods({
   'competitors.get'(name) {
     const company = Companies.findOne({
       name: {$regex: RegExp(name, 'i')},
-      isValid: true
+      isValid: true,
     })
 
     if (!company) return []
@@ -17,5 +17,22 @@ Meteor.methods({
       categories: {$in: categories},
       isValid: true,
     }).fetch()
+  },
+
+  'competitors.getAll'(){
+    return Companies
+      .find({
+        isValid: true,
+      }, {
+        fields: {
+          name: 1,
+          categories: 1,
+        },
+      })
+      .map(company => ({
+        name: company.name,
+        categories: company.categories,
+        competitors: Meteor.call('competitors.get', company.name),
+      }))
   }
 })
