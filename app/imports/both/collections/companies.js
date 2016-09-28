@@ -1,4 +1,5 @@
 import { Mongo } from 'meteor/mongo'
+import { Meteor } from 'meteor/meteor'
 import { SimpleSchema } from 'meteor/aldeed:simple-schema'
 import Categories from './categories'
 import { Roles } from 'meteor/alanning:roles'
@@ -92,7 +93,7 @@ Companies.schema = new SimpleSchema({
     type: Boolean,
     optional: true,
     autoValue() {
-      if (Roles.userIsInRole(this.userId, ['validator', 'admin'])) return true
+      if (Meteor.isServer || Roles.userIsInRole(this.userId, ['validator', 'admin'])) return true
       return false
     }
   },
